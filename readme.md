@@ -6,15 +6,12 @@ git branch auxiliar 1b80fd0</BR>
 #He creado una rama auxiliar con el working copy (es decir con el archivo git-nuestro modificado) antes de hacer el hard reset (paso 11)</BR>
 git merge auxiliar </BR>
 #En ningún momento me había ido de la rama styled por tanto hago un merge para “absorber” la rama auxiliar.</BR>
-3.  git merge master </BR>
-4.	git checkout styled </BR>
-    git merge htmlify</BR>
-#Hay conflictos, nos quedamos con el contenido de la rama styled. </BR>
-5..	git checkout master
-git merge styled </BR>
-#Al hacer cat git-nuestro.md podemos comprobar que el archivo queda como en styled </BR>
+3.  #No hay ningun conflicto porque no se realiza el merge ya que no hay cambios en el commit.</BR>
+4.  #Hay conflictos porque estamos modificando el mismo archivo en dos ramas, nos quedamos con el contenido de la rama styled. </BR>
+5. #No hay cambios en master.
+    #Al hacer cat git-nuestro.md podemos comprobar que el archivo queda como en styled </BR>
 6. 	git log --graph --decorate --pretty=oneline </BR>
-7.	git merge --no-f title </BR>
+7.	#No habría problema porque la rama title se puede fusionar con master.</BR>
 8. 	git reset HEAD~1 </BR>
 #Con git status nos damos cuenta de que el working copy no se ha modificado porque hay cambios sin resolver. </BR>
 9.	git restore <file></BR>
